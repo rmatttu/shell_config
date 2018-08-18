@@ -10,4 +10,4 @@ chmod 666  ~/.zsh_history
 
 
 ## tmux
-cp .tmux.config ~/
+cp .tmux.conf ~/
