@@ -11,10 +11,10 @@ PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color}@${fg[blue]}%m${rese
   %# "
 
 # エイリアス
-alias lst='ls -ltr --color=auto'
-alias l='ls -ltr --color=auto'
-alias la='ls -la --color=auto'
-alias ll='ls -la --color=auto'
+alias lst='ls -ltr -G'
+alias l='ls -ltr -Gk'
+alias la='ls -la -G'
+alias ll='ls -la -G'
 alias so='source'
 alias v='vim'
 alias vi='vim'
