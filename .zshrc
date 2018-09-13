@@ -1,3 +1,5 @@
+source ~/.bash_profile
+
 export EDITORP=vim #エディタをvimに設定
 export LANG=ja_JP.UTF-8 #文字コードをUTF-8に設定
 setopt IGNOREEOF # Ctrl+Dでログアウトしてしまうことを防ぐ
