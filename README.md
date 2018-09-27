@@ -15,12 +15,19 @@ zsh, tmux configure files
 * zsh
 * tmux
 
+
 ## Installation
 
 ```bash
 sudo apt -y install zsh tmux
 ```
 
-## License
 
-## Author
+## メモ
+
+* Cmd + R でマウスモードのOn/Offを切り替えることができる。
+    * https://qiita.com/komo/items/393f4c20eb7d02e40d55
+* tmux、ウィンドウ入れ替え
+    * ウィンドウ1と2を入れ替え
+    * `<prefix>` → `swap-windlw -s 1 -t 2`
+
