@@ -1,4 +1,14 @@
-source ~/.bash_profile
+# test
+#
+# # source ~/.bashrc
+# if [ -f ~/.bashrc ]; then
+#     source ~/.bashrc
+# fi
+#
+# if [ -f ~/.bash_profile ]; then
+#     source ~/.bash_profile
+# fi
+
 
 export EDITORP=vim #エディタをvimに設定
 export LANG=ja_JP.UTF-8 #文字コードをUTF-8に設定
@@ -13,10 +23,19 @@ PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color}@${fg[blue]}%m${rese
   %# "
 
 # エイリアス
-alias lst='ls -ltr -G'
-alias l='ls -ltr -Gk'
-alias la='ls -la -G'
-alias ll='ls -la -G'
+if [ "$(uname)" = 'Darwin' ]; then
+    alias ls='ls -G'
+    alias l='ls -ltr -Gk'
+    alias ll='ls -l -G'
+    alias lst='ls -ltr -G'
+    alias la='ls -la -G'
+else
+    alias ls='ls --color=auto'
+    alias l='ls -ltr --color=auto'
+    alias ll='ls -la --color=auto'
+    alias lst='ls -ltr --color=auto'
+    alias la='ls -la --color=auto'
+fi
 alias so='source'
 alias v='vim'
 alias vi='vim'
@@ -66,3 +85,5 @@ zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+
+# path
