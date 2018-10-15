@@ -1,14 +1,10 @@
-# test
-#
-# # source ~/.bashrc
-# if [ -f ~/.bashrc ]; then
-#     source ~/.bashrc
-# fi
-#
-# if [ -f ~/.bash_profile ]; then
-#     source ~/.bash_profile
-# fi
+if [ -f ~/.bashrc ]; then
+    source ~/.bashrc
+fi
 
+if [ -f ~/.bash_profile ]; then
+    source ~/.bash_profile
+fi
 
 export EDITORP=vim #エディタをvimに設定
 export LANG=ja_JP.UTF-8 #文字コードをUTF-8に設定
@@ -86,4 +82,3 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
-# path
