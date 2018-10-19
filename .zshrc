@@ -24,17 +24,17 @@ PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color}@${fg[blue]}%m${rese
 
 # エイリアス
 if [ "$(uname)" = 'Darwin' ]; then
-    alias ls='ls -G'
-    alias l='ls -l -Gk'
-    alias ll='ls -la -G'
-    alias lst='ls -ltr -G'
-    alias la='ls -la -G'
+    alias ls='ls -FG'
+    alias l='ls -lFGk'
+    alias ll='ls -laFG'
+    alias lst='ls -ltrFG'
+    alias la='ls -laFG'
 else
     alias ls='ls --color=auto'
-    alias l='ls -l --color=auto'
-    alias ll='ls -la --color=auto'
-    alias lst='ls -ltr --color=auto'
-    alias la='ls -la --color=auto'
+    alias l='ls -lF --color=auto'
+    alias ll='ls -laF --color=auto'
+    alias lst='ls -ltrF --color=auto'
+    alias la='ls -laF --color=auto'
 fi
 alias so='source'
 alias soz='source ~/.zshrc'
