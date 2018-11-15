@@ -1,27 +1,19 @@
+#!/bin/sh
 
-alias ls='ls --color=auto'
-alias l='ls -lF --color=auto'
-alias ll='ls -laF --color=auto'
-alias lst='ls -ltrF --color=auto'
-alias la='ls -laF --color=auto'
+## alias
+alias la='ls -la -G'
+alias ll='ls -la -G'
+alias tailf='tail -f'
 
-alias so='source'
-alias sob='source ~/.bash_profile'
-alias v='vim'
-alias vi='vim'
-alias vb='vim ~/.bash_profile'
-alias c='cdr'
-alias h='history'
-alias mv='mv -i'
-alias cp='cp -i'
-alias rm='rm -i'
-alias mkdir='mkdir -p'
-alias ..='c ../'
-alias back='pushd'
-alias diff='diff -U1'
-alias gs='git status'
+## vim
+if [ -d /Applications/MacVim.app/Contents/MacOS/ ]; then
+    alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -u $HOME/.vimrc "$@"'
+    alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+    alias ctags='/Applications/MacVim.app/Contents/MacOS/ctags "$@"'
+    alias gvim='open -a "MacVim" "$@"'
+fi;
 
-alias ..='cd ../'
-alias ...='cd ../..'
-alias ....='cd ../../..'
+## bash
+# export PS1='\h:\W \u\$ '  # default
+export PS1='\[\e[35m\]\u@\h \w\[\e[0m\]\n  \$ '
 
