@@ -51,6 +51,11 @@ alias ..='c ../'
 alias back='pushd'
 alias diff='diff -U1'
 alias gs='git status'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gl='git log'
+alias gc='git commit'
+alias gp='git push'
 
 
 bindkey -e
