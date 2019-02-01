@@ -4,12 +4,7 @@ source ~/.shell/bash/alias_common.inc
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # MacOS
-
-    alias ls='ls -FG'
-    alias l='ls -lFGk'
-    alias ll='ls -laFG'
-    alias lst='ls -ltrFG'
-    alias la='ls -laFG'
+    source ~/.shell/bash/alias_mac.inc
 
     # vim
     if [ -d /Applications/MacVim.app/Contents/MacOS/ ]; then
@@ -25,12 +20,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
 else
     # msys, linux-gnu
-
-    alias ls='ls --color=auto'
-    alias l='ls -lF --color=auto'
-    alias ll='ls -laF --color=auto'
-    alias lst='ls -ltrF --color=auto'
-    alias la='ls -laF --color=auto'
-
+    source ~/.shell/bash/alias_linux.inc
 fi
 

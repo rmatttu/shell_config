@@ -2,6 +2,7 @@
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # Linux
     source ~/.shell/bash/alias_common.inc
+    source ~/.shell/bash/alias_linux.inc
 else
     # Mac
     # source .bashrc
