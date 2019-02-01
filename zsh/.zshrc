@@ -1,4 +1,3 @@
-# test
 
 # source ~/.bashrc
 if [ -f ~/.bashrc ]; then
@@ -22,50 +21,51 @@ colors
 PROMPT="%(?.%{${fg[green]}%}.%{${fg[red]}%})%n${reset_color}@${fg[blue]}%m${reset_color}(%*%) %~
   %# "
 
-# エイリアス
-if [ "$(uname)" = 'Darwin' ]; then
-    alias ls='ls -FG'
-    alias l='ls -lFGk'
-    alias ll='ls -laFG'
-    alias lst='ls -ltrFG'
-    alias la='ls -laFG'
-else
-    alias ls='ls --color=auto'
-    alias l='ls -lF --color=auto'
-    alias ll='ls -laF --color=auto'
-    alias lst='ls -ltrF --color=auto'
-    alias la='ls -laF --color=auto'
-fi
-alias so='source'
+## エイリアス
+#if [ "$(uname)" = 'Darwin' ]; then
+#    alias ls='ls -FG'
+#    alias l='ls -lFGk'
+#    alias ll='ls -laFG'
+#    alias lst='ls -ltrFG'
+#    alias la='ls -laFG'
+#else
+#    alias ls='ls --color=auto'
+#    alias l='ls -lF --color=auto'
+#    alias ll='ls -laF --color=auto'
+#    alias lst='ls -ltrF --color=auto'
+#    alias la='ls -laF --color=auto'
+#fi
+#alias so='source'
 alias soz='source ~/.zshrc'
-alias v='vim'
-alias vi='vim'
-alias vz='vim ~/.zshrc'
-alias c='cdr'
+
+#alias v='vim'
+#alias vi='vim'
+#alias vz='vim ~/.zshrc'
+#alias c='cdr'
 alias h='history -df'
-alias mv='mv -i'
-alias cp='cp -i'
-alias rm='rm -i'
-alias mkdir='mkdir -p'
-alias ..='c ../'
-alias back='pushd'
-alias diff='diff -U1'
-alias gs='git status'
-alias gd='git diff'
-alias gdd='git diff --cached'
-alias gl='git log'
-alias ga='git add'
-alias gc='git commit'
-alias gsh='git push'
-alias gll='git pull'
+#alias mv='mv -i'
+#alias cp='cp -i'
+#alias rm='rm -i'
+#alias mkdir='mkdir -p'
+#alias ..='c ../'
+#alias back='pushd'
+#alias diff='diff -U1'
+#alias gs='git status'
+#alias gd='git diff'
+#alias gdd='git diff --cached'
+#alias gl='git log'
+#alias ga='git add'
+#alias gc='git commit'
+#alias gsh='git push'
+#alias gll='git pull'
+#alias ..='cd ../'
+#alias ...='cd ../..'
+#alias ....='cd ../../..'
 
 
 bindkey -e
 autoload -U compinit; compinit
 setopt auto_cd
-alias ..='cd ../'
-alias ...='cd ../..'
-alias ....='cd ../../..'
 setopt auto_pushd
 setopt pushd_ignore_dups
 setopt extended_glob
@@ -95,4 +95,3 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
-# path

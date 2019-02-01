@@ -9,7 +9,6 @@ zsh, tmux configure files
 ./install.sh
 ```
 
-
 ## Requirements
 
 * zsh
@@ -20,6 +19,9 @@ zsh, tmux configure files
 
 ```bash
 sudo apt -y install zsh tmux
+git clone https://github.com/rmatttu/shell_config.git .shell
+cd .shell
+./install.sh
 ```
 
 
