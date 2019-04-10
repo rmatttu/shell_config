@@ -18,6 +18,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # export PS1='\h:\W \u\$ '  # default
     export PS1='\[\e[35m\]\u@\h \w\[\e[0m\]\n  \$ '
 
+    # nodebrew
+    export PATH=$PATH:/Users/hawk/.nodebrew/current/bin
+
 else
     # msys, linux-gnu
     source ~/.shell/bash/alias_linux.inc
