@@ -23,6 +23,7 @@ alias gs='git status'
 alias gd='git diff'
 alias gdd='git diff --cached'
 alias gl='git log'
+alias gla="git log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias ga='git add'
 alias gc='git commit'
 alias gsh='git push'
