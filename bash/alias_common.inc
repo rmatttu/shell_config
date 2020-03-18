@@ -31,3 +31,4 @@ alias gll='git pull'
 
 alias tailf='tail -f'
 
+alias diff='colordiff'

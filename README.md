@@ -13,12 +13,13 @@ zsh, tmux configure files
 
 * zsh
 * tmux
+* colordiff
 
 
 ## Installation
 
 ```bash
-sudo apt -y install zsh tmux
+sudo apt -y install zsh tmux colordiff
 git clone https://github.com/rmatttu/shell_config.git .shell
 cd .shell
 ./install.sh

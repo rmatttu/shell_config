@@ -12,6 +12,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
         alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
         alias ctags='/Applications/MacVim.app/Contents/MacOS/ctags "$@"'
         alias gvim='open -a "MacVim" "$@"'
+        export PATH=$PATH:/usr/local/etc/bash_completion.d
     fi;
 
     # bash
