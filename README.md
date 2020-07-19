@@ -33,4 +33,4 @@ cd .shell
 * tmux、ウィンドウ入れ替え
     * ウィンドウ1と2を入れ替え
     * `<prefix>` → `swap-windlw -s 1 -t 2`
-
+* [tmux v2.9 マイグレーションガイド 〜 tmux をv2.9 に上げたらinvalid option エラーが出た - Qiita](https://qiita.com/TsutomuNakamura/items/663b8e456768f29e37ed)
