@@ -31,6 +31,7 @@ alias soz='source ~/.zshrc'
 alias h='history -df'
 
 bindkey -e
+bindkey '^[[Z' reverse-menu-complete
 autoload -U compinit; compinit
 setopt auto_cd
 setopt auto_pushd
