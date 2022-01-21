@@ -25,5 +25,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 else
     # msys, linux-gnu
     source ~/.shell/bash/alias_linux.inc
+    export EDITOR=vim
 fi
 
