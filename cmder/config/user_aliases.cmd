@@ -36,3 +36,4 @@ ga=git add $*
 gc=git commit $*
 gsh=git push $*
 gll=git pull $*
+h=h.bat
