@@ -4,6 +4,11 @@ Shell configure files.
 
 ## Usage
 
+```bash
+mkdir -p ~/.shell && curl -sLJ https://github.com/rmatttu/shell_config/releases/latest/download/release.tar.gz | tar zxf - -C ~/.shell
+cd ~/.shell
+```
+
 ### For Linux, macOS
 
 Setup bash, tmux, zsh.
