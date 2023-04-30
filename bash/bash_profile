@@ -1,18 +1,17 @@
-#!/bin/sh
+source ~/.config/bash/alias_common.inc
 
-source ~/.shell/bash/alias_common.inc
-
-if [[ "$OSTYPE" == "darwin"* ]]; then
+case "$OSTYPE" in
+  "darwin"*)
     # MacOS
-    source ~/.shell/bash/alias_mac.inc
+    source ~/.config/bash/alias_mac.inc
 
     # vim
     if [ -d /Applications/MacVim.app/Contents/MacOS/ ]; then
-        alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -u $HOME/.vimrc "$@"'
-        alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
-        alias ctags='/Applications/MacVim.app/Contents/MacOS/ctags "$@"'
-        alias gvim='open -a "MacVim" "$@"'
-        export PATH=$PATH:/usr/local/etc/bash_completion.d
+      alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim -u $HOME/.vimrc "$@"'
+      alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+      alias ctags='/Applications/MacVim.app/Contents/MacOS/ctags "$@"'
+      alias gvim='open -a "MacVim" "$@"'
+      export PATH=$PATH:/usr/local/etc/bash_completion.d
     fi;
 
     # bash
@@ -21,10 +20,29 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
     # nodebrew
     export PATH=$PATH:~/.nodebrew/current/bin
+    ;;
 
-else
-    # msys, linux-gnu
-    source ~/.shell/bash/alias_linux.inc
+  "msys")
+    source ~/.config/bash/alias_linux.inc
+    alias e.='explorer .'
+    alias a.='/c/Asr/AsrLoad.exe /n "$(cygpath -w "$(pwd)")"'
+
     export EDITOR=vim
-fi
 
+    export PATH=$PATH:~/go/bin
+    source ~/.config/bash/key-bindings.bash
+    function fzf_pjc() {
+      local project_name=$(ghq list | sort | $(__fzfcmd))
+      if [ -n "$project_name" ]; then
+        local project_full_path=$(cygpath $(ghq root))/$project_name
+        cd $project_full_path
+      fi
+    }
+    alias ghql='fzf_pjc'
+    ;;
+
+  *)
+    # linux-gnu
+    source ~/.config/bash/alias_linux.inc
+    export EDITOR=vim
+esac
