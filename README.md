@@ -5,8 +5,8 @@ Shell configure files.
 ## Usage
 
 ```bash
-mkdir -p ~/.shell && curl -sLJ https://github.com/rmatttu/shell_config/releases/latest/download/release.tar.gz | tar zxf - -C ~/.shell
-cd ~/.shell
+mkdir -p shell_config && curl -sLJ https://github.com/rmatttu/shell_config/releases/latest/download/release.tar.gz | tar zxf - -C shell_config
+cd shell_config
 ```
 
 ### For Linux, macOS
