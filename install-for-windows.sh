@@ -19,5 +19,8 @@ if type bash >/dev/null 2>&1; then
   fi
   cp -r bash ~/.config
   curl -o ~/.config/bash/key-bindings.bash "https://raw.githubusercontent.com/junegunn/fzf/6fb41a202a97ad3f2437f6e5aee8890268560412/shell/key-bindings.bash"
-  echo "source ~/.config/bash/bashrc" >~/.bashrc
+  cat <<EOS >~/.bashrc
+source ~/.config/bash/bashrc
+export LANG=ja_JP.UTF-8
+EOS
 fi
