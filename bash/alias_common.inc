@@ -9,7 +9,7 @@ alias back='pushd'
 alias diff='diff -U1'
 
 alias so='source'
-alias sob='source ~/.bash_profile'
+alias sor='source ~/.bashrc'
 
 alias ..='cd ../'
 alias ...='cd ../..'
@@ -17,7 +17,7 @@ alias ....='cd ../../..'
 
 alias v='vim'
 alias vi='vim'
-alias vb='vim ~/.bash_profile'
+alias vr='vim ~/.bashrc'
 
 alias gs='git status'
 alias gd='git diff'
