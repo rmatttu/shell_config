@@ -30,10 +30,12 @@ case "$OSTYPE" in
     export PATH=$PATH:~/go/bin
     source ~/.config/bash/key-bindings.bash
     function fzf_pjc() {
-      local project_name=$(ghq list | sort | $(__fzfcmd))
+      local project_name
+      project_name="$(ghq list | sort | eval "$(__fzfcmd)")"
       if [ -n "$project_name" ]; then
-        local project_full_path=$(cygpath $(ghq root))/$project_name
-        cd $project_full_path
+        local project_full_path
+        project_full_path=$(cygpath "$(ghq root)")/$project_name
+        cd "$project_full_path" || return
       fi
     }
     alias ghql='fzf_pjc'
