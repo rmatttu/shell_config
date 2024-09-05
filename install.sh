@@ -47,3 +47,10 @@ if type tmux >/dev/null 2>&1 ; then
   cp -r tmux "$HOME/.config"
   echo "source-file ~/.config/tmux/tmux.conf" >"$HOME/.tmux.conf"
 fi
+
+if [[ "$OSTYPE" = "msys" ]]; then
+  # Git for windows固有の設定
+  # For function fzf_pjc()
+  curl -o ~/.config/bash/key-bindings.bash \
+    "https://raw.githubusercontent.com/junegunn/fzf/6fb41a202a97ad3f2437f6e5aee8890268560412/shell/key-bindings.bash"
+fi
