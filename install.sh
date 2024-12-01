@@ -31,10 +31,10 @@ if type bash >/dev/null 2>&1 ; then
   if [[ -e "$HOME/.config/bash" ]]; then
     mkdir -p "$old_dir"
     mv "$HOME/.config/bash" "$old_dir"
-    mv "$HOME/.bash_profile" "$old_dir"
+    cp "$HOME/.bashrc" "$old_dir"
   fi
   cp -r bash "$HOME/.config"
-  echo "source ~/.config/bash/bash_profile" >"$HOME/.bash_profile"
+  echo "source ~/.config/bash/bashrc" >>"$HOME/.bashrc"
 fi
 
 if type tmux >/dev/null 2>&1 ; then
