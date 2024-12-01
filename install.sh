@@ -31,7 +31,7 @@ if type bash >/dev/null 2>&1 ; then
   if [[ -e "$HOME/.config/bash" ]]; then
     mkdir -p "$old_dir"
     mv "$HOME/.config/bash" "$old_dir"
-    cp "$HOME/.bashrc" "$old_dir"
+    cp -f "$HOME/.bashrc" "$old_dir"
   fi
   cp -r bash "$HOME/.config"
   echo "source ~/.config/bash/bashrc" >>"$HOME/.bashrc"
