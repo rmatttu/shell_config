@@ -60,7 +60,11 @@ case "$OSTYPE" in
     ;;
 
   *)
-    # linux-gnu
+    # Linux
     source ~/.config/bash/alias_linux.inc
     export EDITOR=vim
+
+    PS1='`exit=$?; if [ $exit != 0 ]; then echo "\[\033[01;31m\]✘-$exit "; fi`'
+    PS1="$PS1"'\[\e[0;35m\]\u@\h \w\[\e[0m\]\n  \$ '
+    export PS1
 esac
