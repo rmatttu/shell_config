@@ -7,23 +7,10 @@ Shell configure files.
 ```bash
 mkdir -p ~/.shell && curl -sLJ https://github.com/rmatttu/shell_config/releases/latest/download/release.tar.gz | tar zxf - -C ~/.shell
 cd ~/.shell
-```
-
-### For Linux, macOS
-
-Setup bash, tmux, zsh.
-
-```bash
 ./install.sh
 ```
 
-### For Windows
-
-Setup bash, fzf.
-
-```bash
-./install-for-windows.sh
-```
+### cmder
 
 See `cmder/setup-sample.bat` for cmder setup.
 

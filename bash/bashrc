@@ -26,23 +26,45 @@ case "$OSTYPE" in
     source ~/.config/bash/alias_linux.inc
     alias e.='explorer .'
     alias a.='/c/Asr/AsrLoad.exe /n "$(cygpath -w "$(pwd)")"'
-
     export EDITOR=vim
-
     export PATH=$PATH:~/go/bin
     source ~/.config/bash/key-bindings.bash
     function fzf_pjc() {
-      local project_name=$(ghq list | sort | $(__fzfcmd))
+      local project_name
+      project_name="$(ghq list | sort | eval "$(__fzfcmd)")"
       if [ -n "$project_name" ]; then
-        local project_full_path=$(cygpath $(ghq root))/$project_name
-        cd $project_full_path
+        local project_full_path
+        project_full_path=$(cygpath "$(ghq root)")/$project_name
+        cd "$project_full_path" || return
       fi
     }
     alias ghql='fzf_pjc'
+
+    # Git for Windows で ssh-agent を自動的に起動する
+    env=~/.ssh/agent.env
+    agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
+    agent_start () {
+        (umask 077; ssh-agent >| "$env")
+        . "$env" >| /dev/null ; }
+    agent_load_env
+
+    # agent_run_state: 0=agent running w/ key; 1=agent w/o key; 2=agent not running
+    agent_run_state=$(ssh-add -l >| /dev/null 2>&1; echo $?)
+    if [ ! "$SSH_AUTH_SOCK" ] || [ "$agent_run_state" = 2 ]; then
+        agent_start
+        ssh-add
+    elif [ "$SSH_AUTH_SOCK" ] && [ "$agent_run_state" = 1 ]; then
+        ssh-add
+    fi
+    unset env
     ;;
 
   *)
-    # linux-gnu
+    # Linux
     source ~/.config/bash/alias_linux.inc
     export EDITOR=vim
+
+    PS1='`exit=$?; if [ $exit != 0 ]; then echo "\[\033[01;31m\]✘-$exit "; fi`'
+    PS1="$PS1"'\[\e[0;35m\]\u@\h \w\[\e[0m\]\n  \$ '
+    export PS1
 esac
