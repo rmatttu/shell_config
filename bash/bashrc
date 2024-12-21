@@ -40,6 +40,11 @@ case "$OSTYPE" in
     }
     alias ghql='fzf_pjc'
 
+    # cygpath cd
+    ccd () {
+      cd "$(cygpath "$1")" || return
+    }
+
     # Git for Windows で ssh-agent を自動的に起動する
     env=~/.ssh/agent.env
     agent_load_env () { test -f "$env" && . "$env" >| /dev/null ; }
